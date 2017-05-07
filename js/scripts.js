@@ -1,9 +1,9 @@
 $(function () {
-    var carouselList = $("#carousel ul");
+    var carouselList = $("#carousel ul"),
+        carouselElem = $('#carousel'),
+        carouselWidth = parseInt(carouselElem.css('width'), 10);
     setInterval(changeSlide, 3000);
     function changeSlide() {
-        var carouselElem = $('#carousel'),
-            carouselWidth = parseInt(carouselElem.css('width'), 10);
         carouselList.animate({'marginLeft': -carouselWidth}, 500, moveFirstSlide);
     }
     function moveFirstSlide() {
