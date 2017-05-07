@@ -32,6 +32,35 @@ body
                 width: 900px
                 height: 500px
                 overflow: hidden
+                position: relative
+                .control
+                    background: rgba(0, 0, 0, 0.2)
+                    width: 100px
+                    height: 500px
+                    opacity: .5
+                    text-shadow: 0 1px 2px rgba(0,0,0,.6)
+                    &:hover
+                        opacity: 1
+                    i
+                        font-size: 28px
+                        color: #fff
+                        -webkit-font-smoothing: antialiased
+                .left
+                    position: absolute
+                    top: 0
+                    left: 0
+                    i
+                        position: absolute
+                        top: 50%
+                        left: 50%
+                .right
+                    position: absolute
+                    top: 0
+                    right: 0
+                    i
+                        position: absolute
+                        top: 50%
+                        right: 50%
                 ul
                     width: 9000px
                     margin: 0
@@ -66,6 +95,11 @@ footer
                 #carousel
                     width: 747px
                     height: 415px
+                    .control
+                        width: 83px
+                        height: 415px
+                        i
+                            font-size: 26px
                     ul
                         width: 7470px
                         li
@@ -87,6 +121,11 @@ footer
                 #carousel
                     width: 575px
                     height: 320px
+                    .control
+                        width: 64px
+                        height: 320px
+                        i
+                            font-size: 24px
                     ul
                         width: 5750px
                         li
@@ -105,6 +144,11 @@ footer
                 #carousel
                     width: 362px
                     height: 202px
+                    .control
+                        width: 40px
+                        height: 202px
+                        i
+                            font-size: 20px
                     ul
                         width: 3620px
                         li
