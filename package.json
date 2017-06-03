@@ -1,14 +1,14 @@
 {
-  "name": "kodilla-task_10.3",
+  "name": "carousel",
   "version": "1.0.0",
-  "description": "Task 10.3",
+  "description": "Carousel",
   "main": "js/scripts.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MariuszDziecielski/task_10.3.git"
+    "url": "https://github.com/MariuszDziecielski/carousel.git"
   },
   "keywords": [
     "grunt"
@@ -16,9 +16,9 @@
   "author": "Mariusz Dziecielski",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MariuszDziecielski/task_10.3/issues"
+    "url": "https://github.com/MariuszDziecielski/carousel/issues"
   },
-  "homepage": "https://github.com/MariuszDziecielski/task_10.3#readme",
+  "homepage": "https://github.com/MariuszDziecielski/carousel#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
