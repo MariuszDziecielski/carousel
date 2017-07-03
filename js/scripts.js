@@ -2,7 +2,7 @@ $(function () {
     var carouselList = $("#carousel ul"),
         carouselInterval,
         carouselElem = $('#carousel'),
-        carouselWidth = parseInt(carouselElem.css('width'), 10),
+        carouselWidth = parseFloat(carouselElem.css('width'), 10),
         firstItem = carouselList.find("li:first"),
         lastItem = carouselList.find("li:last"),
         leftControl = $(".left"),
@@ -49,4 +49,9 @@ $(function () {
             setCarouselInterval();
         }
     );
+    $(window).resize(function () {
+        clearInterval(carouselInterval);
+        carouselWidth = parseFloat(carouselElem.css('width'), 10);
+        setCarouselInterval();
+    });
 });

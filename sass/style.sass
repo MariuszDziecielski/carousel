@@ -42,7 +42,7 @@ body
                     &:hover
                         opacity: 1
                     i
-                        font-size: 28px
+                        font-size: 30px
                         color: #fff
                         -webkit-font-smoothing: antialiased
                 .left
@@ -52,6 +52,7 @@ body
                     i
                         position: absolute
                         top: 50%
+                        transform: translateY(-50%)
                         left: 50%
                 .right
                     position: absolute
@@ -60,6 +61,7 @@ body
                     i
                         position: absolute
                         top: 50%
+                        transform: translateY(-50%)
                         right: 50%
                 ul
                     width: 9000px
@@ -89,21 +91,19 @@ footer
                 h1
                     font-size: 26px
             .carousel_container
-                width: 755px
-                height: 423px 
-                padding: 4px           
+                width: 73vw
+                height: 41vw
+                padding: 0.5vw
                 #carousel
-                    width: 747px
-                    height: 415px
+                    width: 72vw
+                    height: 40vw
                     .control
-                        width: 83px
-                        height: 415px
-                        i
-                            font-size: 26px
+                        width: 8vw
+                        height: 40vw  
                     ul
-                        width: 7470px
+                        width: 720vw
                         li
-                            width: 747px
+                            width: 72vw
                             img 
                                 max-width: 100%
                                 height: auto
@@ -115,21 +115,10 @@ footer
                 h1
                     font-size: 22px
             .carousel_container
-                width: 581px
-                height: 326px
-                padding: 3px
                 #carousel
-                    width: 575px
-                    height: 320px
                     .control
-                        width: 64px
-                        height: 320px
                         i
-                            font-size: 24px
-                    ul
-                        width: 5750px
-                        li
-                            width: 575px
+                            font-size: 20px               
 /* For smart phones: */    
 @media (max-width: 480px)
     .carousel 
@@ -138,21 +127,15 @@ footer
                 h1
                     font-size: 13px
             .carousel_container
-                width: 366px
-                height: 205px
-                padding: 2px
                 #carousel
-                    width: 362px
-                    height: 202px
                     .control
-                        width: 40px
-                        height: 202px
+                        width: 10vw
+                    .left
                         i
-                            font-size: 20px
-                    ul
-                        width: 3620px
-                        li
-                            width: 362px
+                            left: 25%
+                    .right
+                        i
+                            right: 25% 
     footer
         .container
             font-size: 12px
