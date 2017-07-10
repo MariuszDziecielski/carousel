@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700')
-$lightColor: #dfecdf
+$whiteColor: #fff
+=pos-abs($top: 0, $right: 0, $left: auto)
+    position: absolute
+    top: $top
+    right: $right
+    left: $left
+=dimensions($width, $height)
+    width: $width
+    height: $height
 body 
-    font-family: 'Fira Mono', monospace
-    font-size: 13px
+    font: normal 13px 'Fira Mono', monospace
     text-align: center
     background: url(https://images.pexels.com/photos/176400/pexels-photo-176400.jpeg?h=1350&auto=compress&cs=tinysrgb) no-repeat center/cover
 *
@@ -12,57 +19,45 @@ body
     margin: 0 auto
 .carousel 
     .container
-        padding-top: 35px
-        padding-bottom: 280px
+        padding: 35px 0 280px
         .layer
             background: rgba(0, 0, 0, 0.3)
             width: 45%
             margin: 0 auto
             h1
                 font-size: 30px
-                color: $lightColor
+                color: #dfecdf
                 margin-bottom: 160px
         .carousel_container
             background: rgba(0, 0, 0, 0.3)
-            width: 910px
-            height: 510px
+            +dimensions(910px, 510px)
             margin: 0 auto
             padding: 5px
             #carousel
-                width: 900px
-                height: 500px
+                +dimensions(900px, 500px)
                 overflow: hidden
                 position: relative
                 .control
                     background: rgba(0, 0, 0, 0.2)
-                    width: 100px
-                    height: 500px
+                    +dimensions(100px, 500px)
                     opacity: .5
                     text-shadow: 0 1px 2px rgba(0,0,0,.6)
                     &:hover
                         opacity: 1
                     i
                         font-size: 30px
-                        color: #fff
+                        color: $whiteColor
                         -webkit-font-smoothing: antialiased
                 .left
-                    position: absolute
-                    top: 0
-                    left: 0
+                    +pos-abs(0, 0, 0)
                     i
-                        position: absolute
-                        top: 50%
                         transform: translateY(-50%)
-                        left: 50%
+                        +pos-abs(50%, auto, 50%)
                 .right
-                    position: absolute
-                    top: 0
-                    right: 0
+                    +pos-abs(0, 0)
                     i
-                        position: absolute
-                        top: 50%
                         transform: translateY(-50%)
-                        right: 50%
+                        +pos-abs(50%, 50%)
                 ul
                     width: 9000px
                     margin: 0
@@ -75,11 +70,9 @@ footer
     .container
         height: 62px
         background: rgba(0, 0, 0, 0.3)
-        padding-top: 20px
-        padding-bottom: 25px
+        padding: 20px 0 25px
         line-height: 17px
-        color: #1a6600
-        color: white
+        color: $whiteColor
 /* Media queries */
 /* For computers: */
 @media (max-width: 992px)
@@ -91,15 +84,12 @@ footer
                 h1
                     font-size: 26px
             .carousel_container
-                width: 73vw
-                height: 41vw
+                +dimensions(73vw, 41vw)
                 padding: 0.5vw
                 #carousel
-                    width: 72vw
-                    height: 40vw
+                    +dimensions(72vw, 42vw)
                     .control
-                        width: 8vw
-                        height: 40vw  
+                        +dimensions(8vw, 40vw)
                     ul
                         width: 720vw
                         li
