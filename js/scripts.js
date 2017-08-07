@@ -1,13 +1,13 @@
 $(function () {
-    var $carouselList = $("#carousel ul"),
-        carouselInterval,
+    const $carouselList = $("#carousel ul"),
         $carouselElem = $('#carousel'),
-        carouselWidth = parseFloat($carouselElem.css('width'), 10),
-        $firstItem = $carouselList.find("li:first"),
-        $lastItem = $carouselList.find("li:last"),
         $leftControl = $(".left"),
         $rightControl = $(".right"),
         $carouselControls = $(".control");
+    let carouselWidth = parseFloat($carouselElem.css('width'), 10),
+        $firstItem = $carouselList.find("li:first"),
+        $lastItem = $carouselList.find("li:last"),
+        carouselInterval;
     function runCarousel() {
         $carouselList.animate({'marginLeft': -carouselWidth * 2}, 500, function () {
             moveSlide("right");
