@@ -2,7 +2,7 @@
   "name": "carousel",
   "version": "1.0.0",
   "description": "Carousel",
-  "main": "js/scripts.js",
+  "main": "js/Carousel.js",
   "scripts": {
     "test": "test"
   },
