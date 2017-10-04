@@ -14,119 +14,115 @@ body
     background: url(https://images.pexels.com/photos/176400/pexels-photo-176400.jpeg?h=1350&auto=compress&cs=tinysrgb) no-repeat center/cover
 *
     box-sizing: border-box
-.container
+.carousel
     max-width: 1200px
     margin: 0 auto
-.carousel
-    .container
-        padding: 35px 0 280px
-        .layer
-            background: rgba(0, 0, 0, 0.3)
-            width: 45%
-            margin: 0 auto
-            h1
-                font-size: 30px
-                color: #dfecdf
-                margin-bottom: 160px
-        .carousel_container
-            background: rgba(0, 0, 0, 0.3)
-            +dimensions(910px, 510px)
-            margin: 0 auto
-            padding: 5px
-            #carousel
-                +dimensions(900px, 500px)
-                overflow: hidden
-                position: relative
-                .control
-                    background: rgba(0, 0, 0, 0.2)
-                    +dimensions(100px, 500px)
-                    opacity: .5
-                    text-shadow: 0 1px 2px rgba(0,0,0,.6)
-                    &:hover
-                        opacity: 1
-                    i
-                        font-size: 30px
-                        color: $whiteColor
-                        -webkit-font-smoothing: antialiased
-                .left
-                    +pos-abs(0, 0, 0)
-                    i
-                        transform: translateY(-50%)
-                        +pos-abs(50%, auto, 50%)
-                .right
-                    +pos-abs(0, 0)
-                    i
-                        transform: translateY(-50%)
-                        +pos-abs(50%, 50%)
-                ul
-                    width: 9000px
-                    margin: 0
-                    padding: 0
-                    li
-                        width: 900px
-                        list-style: none
-                        float: left
-footer
-    .container
-        height: 62px
+    padding: 35px 0 280px
+    .layer
         background: rgba(0, 0, 0, 0.3)
-        padding: 20px 0 25px
-        line-height: 17px
-        color: $whiteColor
+        width: 45%
+        margin: 0 auto
+        h1
+            font-size: 30px
+            color: #dfecdf
+            margin-bottom: 160px
+    .carousel_container
+        background: rgba(0, 0, 0, 0.3)
+        +dimensions(910px, 510px)
+        margin: 0 auto
+        padding: 5px
+        #carousel
+            +dimensions(900px, 500px)
+            overflow: hidden
+            position: relative
+            .control
+                background: rgba(0, 0, 0, 0.2)
+                +dimensions(100px, 500px)
+                opacity: .5
+                text-shadow: 0 1px 2px rgba(0,0,0,.6)
+                &:hover
+                    opacity: 1
+                i
+                    font-size: 30px
+                    color: $whiteColor
+                    -webkit-font-smoothing: antialiased
+            .left
+                +pos-abs(0, 0, 0)
+                i
+                    transform: translateY(-50%)
+                    +pos-abs(50%, auto, 50%)
+            .right
+                +pos-abs(0, 0)
+                i
+                    transform: translateY(-50%)
+                    +pos-abs(50%, 50%)
+            ul
+                width: 9000px
+                margin: 0
+                padding: 0
+                li
+                    width: 900px
+                    list-style: none
+                    float: left
+footer
+    max-width: 1200px
+    margin: 0 auto
+    height: 62px
+    background: rgba(0, 0, 0, 0.3)
+    padding: 20px 0 25px
+    line-height: 17px
+    color: $whiteColor
 /* Media queries */
 /* For computers: */
 @media (max-width: 992px)
-    .container
+    .carousel,
+    footer
         width: 100%
     .carousel
-        .container
-            .layer
-                h1
-                    font-size: 26px
-            .carousel_container
-                +dimensions(73vw, 41vw)
-                padding: 0.5vw
-                #carousel
-                    +dimensions(72vw, 42vw)
-                    .control
-                        +dimensions(8vw, 40vw)
-                    ul
-                        width: 720vw
-                        li
-                            width: 72vw
-                            img
-                                max-width: 100%
-                                height: auto
+        .layer
+            h1
+                font-size: 26px
+        .carousel_container
+            +dimensions(73vw, 41vw)
+            padding: 0.5vw
+            #carousel
+                +dimensions(72vw, 42vw)
+                .control
+                    +dimensions(8vw, 40vw)
+                ul
+                    width: 720vw
+                    li
+                        width: 72vw
+                        img
+                            max-width: 100%
+                            height: auto
 /* For tablets: */
 @media (max-width: 768px)
     .carousel
-        .container
-            .layer
-                h1
-                    font-size: 22px
-            .carousel_container
-                #carousel
-                    .control
-                        i
-                            font-size: 20px
+        .layer
+            h1
+                font-size: 22px
+        .carousel_container
+            #carousel
+                .control
+                    i
+                        font-size: 20px
 /* For smart phones: */
 @media (max-width: 480px)
     .carousel
-        .container
-            .layer
-                h1
-                    font-size: 13px
-            .carousel_container
-                #carousel
-                    .control
-                        width: 10vw
-                    .left
-                        i
-                            left: 25%
-                    .right
-                        i
-                            right: 25%
+        .layer
+            h1
+                font-size: 13px
+        .carousel_container
+            #carousel
+                .control
+                    width: 10vw
+                .left
+                    i
+                        left: 25%
+                .right
+                    i
+                        right: 25%
     footer
-        .container
-            font-size: 12px
-            padding-bottom: 35px
+        font-size: 12px
+        padding-bottom: 35px
