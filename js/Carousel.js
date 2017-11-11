@@ -2,33 +2,22 @@ class Carousel {
     constructor(element) {
         this.$carouselElem = element;
         this.$carouselList = $("#carousel ul");
-        this.$leftControl = $(".left");
-        this.$rightControl = $(".right");
         this.$carouselControls = $(".control");
         this.carouselWidth = parseFloat(this.$carouselElem.css('width'), 10);
         this.$firstItem = this.$carouselList.find("li:first");
         this.$lastItem = this.$carouselList.find("li:last");
         this.carouselInterval = 0;
-        this.$leftControl.click(event => {
-            event.preventDefault();
-            clearInterval(this.carouselInterval);
-            this.$carouselList.animate({'marginLeft': 0}, 500, () => {
-                this.moveSlide("left");
-            });
-        });
-        this.$rightControl.click(event => {
-            event.preventDefault();
-            clearInterval(this.carouselInterval);
-            this.runCarousel();
-        });
-        this.$carouselControls.hover(
-            () => {
+        this.$carouselControls.on({
+            click: e => {
+                this.handleCarouselControl(e);
+            },
+            mouseenter: () => {
                 clearInterval(this.carouselInterval);
             },
-            () => {
+            mouseleave: () => {
                 this.setCarouselInterval();
             }
-        );
+        });
         $(window).resize(() => {
             clearInterval(this.carouselInterval);
             this.carouselWidth = parseFloat(this.$carouselElem.css('width'), 10);
@@ -43,12 +32,23 @@ class Carousel {
     setCarouselInterval() {
         this.carouselInterval = setInterval(this.runCarousel, 3000);
     }
+    handleCarouselControl(e) {
+        e.preventDefault();
+        clearInterval(this.carouselInterval);
+        if ($(e.target).is(".right")) {
+            this.runCarousel();
+        } else {
+            this.$carouselList.animate({'marginLeft': 0}, 500, () => {
+                this.moveSlide("left");
+            });
+        }
+    }
     moveSlide(direction) {
         this.$firstItem = this.$carouselList.find("li:first");
         this.$lastItem = this.$carouselList.find("li:last");
         if (direction == "right") {
             this.$lastItem.after(this.$firstItem);
-        } else if (direction == "left") {
+        } else {
             this.$firstItem.before(this.$lastItem);
         }
         this.$carouselList.css({marginLeft: -this.carouselWidth});
